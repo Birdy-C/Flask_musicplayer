@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="zh" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>18款炫酷的jQuery文字动画特效DEMO演示</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Arapey|Archivo+Black|Elsie+Swash+Caps|Playfair+Display|Anton|Rubik|Teko:600|Sacramento|Abril+Fatface|Cormorant+Garamond|Neucha|Unica+One|Old+Standard+TT" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="static/css/decolines.css" />
+<link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="static/css/demo.css">
+<link rel="stylesheet" type="text/css" href="static/css/lettereffect.css" />
+<link rel="stylesheet" type="text/css" href="static/css/pater.css" />
+
+<script>document.documentElement.className = 'js';</script>
+</head>
+<body class="loading">
+	<svg class="hidden">
+		<defs>
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+			<symbol id="icon-cross" viewBox="0 0 24 24">
+				<title>cross</title>
+				<path d="M2.9,2.9l18.2,18.2 M2.9,21.1L21.1,2.9 M21.8,20.4L13.4,12l8.4-8.4l-1.4-1.4L12,10.6L3.6,2.2L2.2,3.6l8.4,8.4l-8.4,8.4l1.4,1.4l8.4-8.4l8.4,8.4L21.8,20.4z"/>
+			</symbol>
+		</defs>
+	</svg>
+	<main>
+		
+		<section class="content content--c7" id="section7">
+			<div class="slideshow slideshow--7" data-effect="fx7">
+				<div class="slide slide--current"><h2 class="title title--style-7">Hey Hey Hey!</h2></div>
+				<div class="slide"><h2 class="title title--style-7">Good Morning!</h2></div>
+				<div class="slide"><h2 class="title title--style-7">I'm Birdy!</h2></div>
+				<div class="slide"><h2 class="title title--style-7">About Me ---></h2></div>
+				<div class="slide"><h2 class="title title--style-7">------------></h2></div>
+				<div class="slide"><h2 class="title title--style-7">Birth Place: Earth</h2></div>
+				<div class="slide"><h2 class="title title--style-7">Race: Human</h2></div>
+				<div class="slide"><h2 class="title title--style-7">Politics: Freedom</h2></div>
+				<div class="slide"><h2 class="title title--style-7">Religion: Love</h2></div>
+				<div class="slide"><h2 class="title title--style-7">---over!---</h2></div>
+				<div class="slide"><h2 class="title title--style-7">Glad to meet U!</h2></div>
+			</div>
+			<nav class="actions">
+				<button class="btn btn--trigger btn--prev">Previous</button>
+				<button class="btn btn--trigger btn--next">Next</button>
+			</nav>
+		</section><!-- /content -->
+		
+	</main>
+<script src="static/js/charming.min.js"></script>
+<script src="static/js/anime.min.js"></script>
+<script src="static/js/lineMaker.js"></script>
+<script src="static/js/imagesloaded.pkgd.min.js"></script>
+<script src="static/js/textfx.js"></script>
+<script>
+(function() {
+	/*
+	How to use the plugin:
+	
+	// Initialize
+	var txt = new TextFx(this.el.querySelector('.title'));
+	
+	// Show letters: 
+	// txt.show([effect] [,callback]);
+	// If nothing is passed, then no animation.
+	// ´effect´ can either be one of the predefined effects: ['fx1',...,'fx17'] or a object literal representing both in and out animations (anime.js based):
+	// example:
+	effect = {
+		in: {
+			duration: 500,
+			delay: function(el, index) { 
+				return 250+index*40; 
+			},
+			easing: 'easeOutExpo',
+			opacity: 1,
+			translateY: ['50%','0%']
+		},
+		out: {
+			duration: 500,
+			delay: function(el, index) { 
+				return index*40; 
+			},
+			easing: 'easeOutExpo',
+			opacity: 0,
+			translateY: '-50%'
+		}
+	}
+	// ´callback´ is the callback function, after all the letters finish the animation.
+	
+	// Hide letters: 
+	// txt.hide([effect] [,callback]); (same logic of show)
+	 */
+	
+	// For demo purposes only:
+	// Let´s build a simple slideshow to exemplify the TextFx plugin:
+	
+	// Body element. 
+	var bodyEl = document.body;
+	// Preload all images..
+	imagesLoaded(bodyEl, { background: true }, function() {
+		bodyEl.classList.remove('loading');
+	});
+	
+	// Slide obj: each Slideshow´s slide will contain the HTML element and the instance of TextFx.
+	var Slide = function(el) {
+			this.el = el;
+			this.txt = new TextFx(this.el.querySelector('.title'));
+		},
+		// The Slideshow obj.
+		Slideshow = function(el) {
+			this.el = el;
+			this.current = 0;
+			this.slides = [];
+			var self = this;
+			[].slice.call(this.el.querySelectorAll('.slide')).forEach(function(slide) {
+				self.slides.push(new Slide(slide));
+			});
+			this.slidesTotal = this.slides.length;
+			this.effect = this.el.getAttribute('data-effect');
+		};
+
+	Slideshow.prototype._navigate = function(direction) {
+		if( this.isAnimating ) {
+			return false;
+		}
+		this.isAnimating = true;
+
+		var self = this, currentSlide = this.slides[this.current];
+
+		this.current = direction === 'next' ? (this.current < this.slidesTotal - 1 ? this.current + 1 : 0) : (this.current = this.current > 0 ? this.current - 1 : this.slidesTotal - 1);
+		var nextSlide = this.slides[this.current];
+
+		var checkEndCnt = 0, checkEnd = function() {
+			++checkEndCnt;
+			if( checkEndCnt === 2 ) {
+				currentSlide.el.classList.remove('slide--current');
+				nextSlide.el.classList.add('slide--current');
+				self.isAnimating = false;
+			}
+		};
+		
+		// Call the TextFx hide method and pass the effect string defined in the data-effect attribute of the Slideshow element.
+		currentSlide.txt.hide(this.effect, function() {
+			currentSlide.el.style.opacity = 0;
+			checkEnd();
+		});
+		// First hide the next slide´s TextFx text.
+		nextSlide.txt.hide();
+		nextSlide.el.style.opacity = 1;
+		// And now call the TextFx show method.
+		nextSlide.txt.show(this.effect, function() {
+			checkEnd();
+		});
+	};
+
+	Slideshow.prototype.next = function() { this._navigate('next'); };
+
+	Slideshow.prototype.prev = function() { this._navigate('prev');	};
+
+	function getDecoColor(pos) {
+		switch(pos) {
+			case 0 : return '#d9d9e0'; break;
+			case 2 : return '#171412'; break;
+			case 6 : return '#87d6b5'; break;
+			case 11 : return '#CBD6CB'; break;
+			case 13 : return '#F1D50E'; break;
+			case 14 : return '#52CA67'; break;
+			default : return '#fff'; break;
+		};
+	}
+
+	[].slice.call(document.querySelectorAll('.content')).forEach(function(el, pos) {
+		var slideshow = new Slideshow(el.querySelector('.slideshow'));
+		el.querySelector('.actions').firstElementChild.addEventListener('click', function() { slideshow.prev(); });
+		el.querySelector('.actions').lastElementChild.addEventListener('click', function() { slideshow.next(); });
+
+		if( pos === 0 || pos === 2 || pos === 6 || pos === 11 || pos === 13 || pos === 14 ) {
+			var decoColor = getDecoColor(pos);
+			new LineMaker({
+				parent: {element: el, position: 'prepend'},
+				lines: pos % 2 === 0 ? [
+						{top: 0, left: '6%', width: 1, height: '100vh', color: decoColor},
+						{top: 0, left: '26%', width: 1, height: '100vh', color: decoColor},
+						{top: 0, left: '46%', width: 1, height: '100vh', color: decoColor},
+						{top: 0, left: '66%', width: 1, height: '100vh', color: decoColor},
+						{top: 0, left: '86%', width: 1, height: '100vh', color: decoColor}
+					] : [
+						{top: '20%', left: 0, width: '100vw', height: 1, color: decoColor},
+						{top: '40%', left: 0, width: '100vw', height: 1, color: decoColor},
+						{top: '60%', left: 0, width: '100vw', height: 1, color: decoColor},
+						{top: '80%', left: 0, width: '100vw', height: 1, color: decoColor}
+					]
+			});
+		}
+	});
+	
+	// Credits Modal:
+	var modal = document.querySelector('.modal'),
+		modalOverlay = modal.querySelector('.modal__overlay'),
+		modalCloseCtrl = modal.querySelector('.modal__action'),
+		modalContent = modal.querySelector('.modal__content'),
+		inner = modal.querySelector('.modal__text').children;
+	
+	modalContent.style.WebkitTransform = modalContent.style.transform = 'scale3d(1,0,1)';
+	modalCloseCtrl.style.opacity = 0;
+	[].slice.call(inner).forEach(function(el) {
+		el.style.opacity = 0;
+	})
+	
+	function bezier(x1, y1, x2, y2, epsilon) {
+		var curveX = function(t){
+			var v = 1 - t;
+			return 3 * v * v * t * x1 + 3 * v * t * t * x2 + t * t * t;
+		};
+
+		var curveY = function(t){
+			var v = 1 - t;
+			return 3 * v * v * t * y1 + 3 * v * t * t * y2 + t * t * t;
+		};
+
+		var derivativeCurveX = function(t){
+			var v = 1 - t;
+			return 3 * (2 * (t - 1) * t + v * v) * x1 + 3 * (- t * t * t + 2 * v * t) * x2;
+		};
+
+		return function(t){
+
+			var x = t, t0, t1, t2, x2, d2, i;
+
+			// First try a few iterations of Newton's method -- normally very fast.
+			for (t2 = x, i = 0; i < 8; i++){
+				x2 = curveX(t2) - x;
+				if (Math.abs(x2) < epsilon) return curveY(t2);
+				d2 = derivativeCurveX(t2);
+				if (Math.abs(d2) < 1e-6) break;
+				t2 = t2 - x2 / d2;
+			}
+
+			t0 = 0, t1 = 1, t2 = x;
+
+			if (t2 < t0) return curveY(t0);
+			if (t2 > t1) return curveY(t1);
+
+			// Fallback to the bisection method for reliability.
+			while (t0 < t1){
+				x2 = curveX(t2);
+				if (Math.abs(x2 - x) < epsilon) return curveY(t2);
+				if (x > x2) t0 = t2;
+				else t1 = t2;
+				t2 = (t1 - t0) * .5 + t0;
+			}
+
+			// Failure
+			return curveY(t2);
+
+		};
+	};
+	
+	var duration = 500, epsilon = (1000 / 60 / duration) / 4, easing1 = bezier(0.1, 1, 0.9, 1, epsilon);
+	anime.easings['myCustomEasing'] = function(t){ return easing1(t); };
+
+	function openCredits() {
+		modal.classList.remove('modal--closed');
+		anime({
+			targets: modalOverlay,
+			duration: duration,
+			easing: 'myCustomEasing',
+			opacity: [0,1]
+		});
+		anime({
+			targets: modalContent,
+			duration: duration,
+			easing: 'myCustomEasing',
+			scaleY: [0,1]
+		});
+		anime({
+			targets: modalCloseCtrl,
+			duration: 200,
+			delay: 300,
+			easing: 'easeOutExpo',
+			opacity: [0,1]
+		});
+		anime({
+			targets: inner,
+			duration: 800,
+			delay: function(el, index) { return 250+index*70; },
+			opacity: {
+				easing: 'linear',
+				value: [0, 1]
+			},
+			translateY: {
+				easing: 'easeOutExpo',
+				value: [30, 0]
+			}
+		});
+	}
+
+	function closeCredits() {
+		modal.classList.add('modal--closed');
+	}
+
+	document.querySelector('.btn--modal-trigger').addEventListener('click', openCredits);
+	modalCloseCtrl.addEventListener('click', closeCredits);
+
+	var paterEl = document.querySelector('.pater'),
+		pater = new TextFx(paterEl.querySelector('.pater__title')),
+		fxPater = {
+			in: {
+				duration: 400,
+				delay: function(el, index) { return 50+index*20; },
+				easing: 'easeOutExpo',
+				opacity: 1,
+				translateY: ['50%','0%']
+			},
+			out: {
+				duration: 400,
+				delay: function(el, index) { 
+					return index*20; 
+				},
+				easing: 'easeOutExpo',
+				opacity: 0,
+				translateY: '-50%'
+			}
+		};
+	
+	paterEl.addEventListener('mouseenter', function() {
+		pater.hide();
+		setTimeout(function() {
+			pater.show(fxPater);	
+		},60);
+	});
+	paterEl.addEventListener('mouseleave', function() {
+		pater.show();
+	});
+})();
+</script>
+</body>
+</html>
